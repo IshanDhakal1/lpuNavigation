@@ -1,0 +1,60 @@
+import gmaps
+import gmaps.datasets
+gmaps.configure(api_key='AIzaSyBjJVQqMvcoawWwBuBaDYYPisV9psGoKi8')
+print ('Starting point= BH1 , BH2 , BH3 , BH4 , BH5 , BH6 , BH7 , BH8 , 30 BLOCK , MAIN GATE , UNI MALL')
+start=input("enter starting point ")
+print ('Ending point= BH1 , BH2 , BH3 , BH4 , BH5 , BH6 , BH7 , BH8 , 30 BLOCK , MAIN GATE , UNI MALL')
+end=input("enter ending point ")
+print ('Enter the mode of transport')
+modee= input('Mode = BICYCLING, DRIVING, WALKING')
+modee=modee.upper()
+if(start.upper()=="BH1"):
+    Startpoin = (31.251378,75.700362)
+elif(start.upper()=="BH2"):
+    Startpoin = (31.249938,75.700616)
+elif(start.upper()=="BH3"):
+    Startpoin = (31.249638,75700307)
+elif(start.upper()=="BH4"):
+    Startpoin = (31.248800,75.699899)
+elif(start.upper()=="BH5"):
+    Startpoin = (31.248716,75.703185)
+elif(start.upper()=="BH6"):
+    Startpoin = (31.247755,75.703546)
+elif(start.upper()=="BH7"):
+    Startpoin = (31.249545,75.698379)
+elif(start.upper()=="BH8"):
+    Startpoin = (31.251584,75.702365)
+elif(start.upper()=="30 BLOCK"):
+    Startpoin = (31.25913,75.704757)
+elif(start.upper()=="MAIN GATE"):
+    Startpoin = (31.2603011,75.7075257)
+elif(start.upper()=="UNI MALL"):
+    Startpoin = (31.255670,75.705279)
+
+if(end.upper()=="BH1"):
+    Endpoin = (31.251378,75.700362)
+elif(end.upper()=="BH2"):
+    Endpoin = (31.249938,75.700616)
+elif(end.upper()=="BH3"):
+    Endpoin = (31.249638,75700307)
+elif(end.upper()=="BH4"):
+    Endpoin = (31.248800,75.699899)
+elif(end.upper()=="BH5"):
+    Endpoin = (31.248716,75.703185)
+elif(end.upper()=="BH6"):
+    Endpoin = (31.247755,75.703546)
+elif(end.upper()=="BH7"):
+    Endpoin = (31.249545,75.698379)
+elif(end.upper()=="BH8"):
+    Endpoin = (31.251584,75.702365)
+elif(end.upper()=="30 BLOCK"):
+    Endpoin = (31.25913,75.704757)
+elif(end.upper()=="MAIN GATE"):
+    Endpoin = (31.2603011,75.7075257)
+elif(end.upper()=="UNI MALL"):
+    Endpoin = (31.255670,75.705279)
+print(Startpoin,"   ",Endpoin)
+fig = gmaps.figure()
+travelA2B = gmaps.directions_layer(Startpoin, Endpoin,travel_mode=modee)
+fig.add_layer(travelA2B)
+fig
